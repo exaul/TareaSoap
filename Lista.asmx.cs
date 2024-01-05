@@ -24,10 +24,35 @@ namespace TareaSoap
         {
             return "Hola a todos";
         }
+
         [WebMethod]
         public MotosRespuesta GetAllMotos()
         {
             return Motolist.GetAllMotos();
+        }
+
+        [WebMethod]
+        public MotosRespuesta GetMotoById(int id)
+        {
+            return Motolist.GetMotoById(id);
+        }
+
+        [WebMethod]
+        public MotosRespuesta AddMoto(Motos moto)
+        {
+            return Motolist.AddMoto(moto);
+        }
+
+        [WebMethod]
+        public MotosRespuesta UpdateMoto(Motos moto)
+        {
+            return Motolist.UpdateMoto(moto);
+        }
+
+        [WebMethod]
+        public MotosRespuesta DeleteMoto(int id)
+        {
+            return Motolist.DeleteMoto(id);
         }
     }
 }

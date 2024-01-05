@@ -8,5 +8,6 @@ namespace TareaSoap.BusinessMessage
     public class Motos
     {
         public string NombresMotos { get; set; }
+        public int Id {  get; set; }
     }
 }
