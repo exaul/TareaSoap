@@ -26,19 +26,20 @@ namespace TareaSoap.BusinessAction
             return new MotosRespuesta() { Motosres = (moto != null) ? new List<Motos> { moto } : null };
         }
 
-        public static MotosRespuesta AddMoto(Motos moto)
+        public static MotosRespuesta AddMoto(string nombresMotos)
         {
+            Motos moto = new Motos() { NombresMotos = nombresMotos };
             moto.Id = motos.Count + 1;
             motos.Add(moto);
             return new MotosRespuesta() { Motosres = new List<Motos> { moto } };
         }
 
-        public static MotosRespuesta UpdateMoto(Motos updatedMoto)
+        public static MotosRespuesta UpdateMoto(int id, string nombresMotos)
         {
-            Motos existingMoto = motos.FirstOrDefault(m => m.Id == updatedMoto.Id);
+            Motos existingMoto = motos.FirstOrDefault(m => m.Id == id);
             if (existingMoto != null)
             {
-                existingMoto.NombresMotos = updatedMoto.NombresMotos;
+                existingMoto.NombresMotos = nombresMotos;
                 return new MotosRespuesta() { Motosres = new List<Motos> { existingMoto } };
             }
             else

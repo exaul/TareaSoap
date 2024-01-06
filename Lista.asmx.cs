@@ -36,17 +36,16 @@ namespace TareaSoap
         {
             return Motolist.GetMotoById(id);
         }
-
         [WebMethod]
-        public MotosRespuesta AddMoto(Motos moto)
+        public MotosRespuesta AddMoto(string nombresMotos)
         {
-            return Motolist.AddMoto(moto);
+            return Motolist.AddMoto(nombresMotos);
         }
 
         [WebMethod]
-        public MotosRespuesta UpdateMoto(Motos moto)
+        public MotosRespuesta UpdateMoto(int id, string nombresMotos)
         {
-            return Motolist.UpdateMoto(moto);
+            return Motolist.UpdateMoto(id, nombresMotos);
         }
 
         [WebMethod]
